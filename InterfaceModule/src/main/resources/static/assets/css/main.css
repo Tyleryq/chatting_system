@@ -1,0 +1,75 @@
+.hidden{
+	display: none;
+}
+#main{
+	height: 620px;
+}
+#left{
+	background-color: #d9edf7;
+	height: 100%;
+	padding: 0;
+	border-width: 0;
+}
+
+.list_dataBox>li{
+	width: 106%;
+	border-left-width: 0;
+	border-color: #31708f;
+	background-color: #d9edf7;
+	height: 60px;
+	padding-top: 18px;
+	border-bottom-width: 1px;
+}
+#right{
+	height: 100%;
+	padding: 0;
+	border-left-width: 0;
+	overflow: auto;
+}
+#info{
+	margin-bottom: 0;
+	overflow: auto;
+}
+
+.eighty{
+    height: 80%;
+}
+
+.full{
+    height: 100%;
+}
+
+#unameBox{
+	color: #31708f;
+	height: 60px;
+}
+#searchBox input{
+	background-color:  #d9edf7;
+}
+#searchBox button{
+	background-color:  #d9edf7;
+}
+.selected{
+	background-color: #31708f;
+}
+#info_data>li{
+	color: #31708f;
+	border-color: #d9edf7;
+}
+.zone_uname{
+	color:  #337ab7;
+}
+#inputBox textarea{
+	width: 100%;
+	border-color: #bce8f1;
+	border-width: 1px;
+	border-top-width: 2px;
+}
+#publisherBox{
+	color: gray;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+.small_info{
+	margin-left: 20px;
+}

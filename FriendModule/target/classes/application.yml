@@ -1,0 +1,31 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: friend-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatting_system?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 1234
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+
+eureka:
+  client:
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负裁均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7070/eureka
+
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+  type-aliases-package: edu.ncu.chattingsys.model.domain  #所有Entity别名类所在包

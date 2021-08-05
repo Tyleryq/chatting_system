@@ -1,0 +1,6 @@
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\MessageMain.java
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\controller\MessageController.java
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\config\RedisTemplateConfig.java
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\service\MessageService.java
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\dao\MessageDao.java
+E:\ideaProjects\chatting_system\MessageModule\src\main\java\edu\ncu\chattingsys\message\service\Receiver.java

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>注册</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/register.css}">
+	<script th:src="@{/assets/js/register.js}"></script>
+</head>
+<body>
+	<form  class="form-horizontal col-xs-offset-2 col-sm-offset-4" role="form">
+		<div class="form-group"><h2 class="text-center col-sm-6 col-xs-10">聊天系统注册</h2></div>
+		<div class="form-group ">
+			<div class="col-sm-6 col-xs-10">
+				<label>邮箱</label>
+				<input type="email" name="mail" class="form-control" placeholder="请输入邮箱">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>昵称</label>
+				<input type="text" name="uname" class="form-control" placeholder="请输入昵称" onblur="checkName()">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>性别</label><br/>
+				<label class="radio-inline">
+					<input type="radio" name="sex" value="m" checked>男
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="sex" value="f">女
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>密码</label>
+				<input type="password" name="pwd" class="form-control" placeholder="请输入密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>确认密码</label>
+				<input type="password" name="spwd" class="form-control" placeholder="请确认密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-4 col-xs-10">
+				<input type="text" name="mailCode" placeholder="邮箱验证码">
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-default col-xs-12 col-sm-12" onclick="sendMailCode()">发送验证码</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<input type="text" name="sureCode" placeholder="验证码"><img id="verifyCode" src="/verifyCode">
+			</div>
+		</div>
+		<div class="form-group collapse" id="msgBox">
+			<div class="col-sm-6 col-xs-10 text-center">
+				<h2><span id="msg" class="label label-danger col-sm-12">用户名已存在</span></h2>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<button type="button" id="register" class="btn btn-primary col-xs-12 col-sm-12">注册</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<a href="/login" class="col-sm-6 col-xs-6 text-left">登录</a>
+				<a href="/subscriptionRegisterPage" target="_blank" class="col-sm-6 col-xs-6 text-right">注册公众号</a>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

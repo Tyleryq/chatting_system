@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>空间主页</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/main.css}">
+</head>
+<body>
+	<div id="hidden" class="hidden"><!-- 此块不可见,用于保存数据 -->
+		<input type="number" name="" id="uid" th:value="${uid}" />
+		<input type="number" name="" id="fid" th:value="${fid}" />
+		<input type="text" name="" id="token" th:value="${token}" />
+		<input type="text" name="" id=""/>
+	</div>
+	<div class="container">
+		<div class="row" id="main">
+			<div class="col-sm-3" id="left">
+				<ul class="nav nav-pills col-sm-12 col-sm-offset-1" style="margin-top: 20px;" id="navBox">
+					<li class="active col-sm-5" id="msgs"><a><span class="glyphicon glyphicon-th-list"></span></a></li>
+				</ul>
+				<ul class="list-group col-sm-12" id="list_data">
+<!--					<li class="list-group-item">收到一条消息</li>-->
+				</ul>
+			</div>
+
+			<div class="col-sm-9" id="right">
+					<div class="panel panel-info full" id="info">
+					    <div class="panel-heading">
+					        <h3 class="panel-title text-center">
+					            详情
+					        </h3>
+					    </div>
+					    <div class="panel-body" id="info_data">
+
+					    </div>
+					</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var zoneList,uid,token;
+	jQuery(document).ready(function($) {
+		uid=$("#uid").val();
+		token=$("#token").val();
+		let fid=$("#fid").val();
+		$.get('/getFriendZonesByFid',{uid:uid,token:token,fid:fid}, function(data) {
+			zoneLists=data;console.log(data);
+			if(zoneLists.length==0) $("#info_data").html("没有动态");
+			for(var i=0;i<zoneLists.length;i++){
+				let likes=zoneLists[i].likes;
+				let likesString="";
+				if(likes!=null){
+					for(var j=0;j<likes.length;j++){//加载点赞人姓名
+						likesString+=likes[j]+",";
+					}
+				}
+				let comments=zoneLists[i].zoneComments;
+				let commentsString='';
+				if(comments!=null){
+					for(var j=0;j<comments.length;j++){//加载评论
+						commentsString+=comments[j].uname+':'+comments[j].content+'<br>';
+					}
+				}
+				let hdata="<li class='list-group-item'><span class='zone_uname'>"+zoneLists[i].uname+"</span><br>发表于"+zoneLists[i].zone.p_date+"<br>"+zoneLists[i].zone.content+"<br><br><span class='glyphicon glyphicon-thumbs-up' onclick='likeZone("+i+")'/>&nbsp;&nbsp;"+likesString+"<span id='"+i+"_likeNum'>"+zoneLists[i].likeNum+"</span>人觉得很赞<br>"+commentsString+"<div class='input-group'><input type='text' id='"+i+"_zone' class='form-control' placeholder='输入评论' /><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='addComment("+i+")'>评论</button></span></div></li>";
+				$("#info_data").append(hdata);
+			}
+		});
+	});
+	function likeZone(i){
+    $("#"+i+"_likeNum").text(zoneLists[i].likeNum+1);
+    $.post('/likeZone', {uid: uid, token:token,zid:zoneLists[i].zone.zone_id});
+	}
+
+	function addComment(i){
+		let content=$("#"+i+"_zone").val();
+		$("#"+i+"_zone").val("");
+		$.post('/addComment', {uid: uid,token:token,zid:zoneLists[i].zone.zone_id,content:content},function(){
+			location.reload();//刷新页面
+		});
+	}
+
+</script>
+</html>

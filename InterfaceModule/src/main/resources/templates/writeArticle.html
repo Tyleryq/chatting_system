@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>写文章</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/editormd/css/editormd.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/writeArticle.css}">
+	<script type="text/javascript" th:src="@{/assets/js/writeArticle.js}"></script>
+</head>
+<body>
+	<div id="hidden" class="hidden"><!-- 此块不可见,用于保存数据 -->
+		<input type="number" id="sid" name="" th:value="${sid}"/>
+		<input type="text" name="" id=""/>
+	</div>
+
+
+	<div class="" id="main">
+		<form class="form-horizontal" role="form">
+			<div class="form-group" id="titleBox">
+				<label for="title" class="col-sm-1 control-label _label">文章标题</label>
+				<div class="col-sm-11">
+					<input type="text" class="form-control" id="title" placeholder="请输入文章标题">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="keyword" class="col-sm-1 control-label _label">关键词</label>
+				<div class="col-sm-11">
+					<input type="text" class="form-control" id="keyword" placeholder="请输入关键词">
+				</div>
+			</div>
+			<div id="md-content" style="z-index: 1 !important;">
+				<textarea id="content"></textarea>
+				<!-- 输入内容生成html -->
+				<textarea class="editormd-html-textarea" name="editormd-html-textarea" id="htmlContent"></textarea>
+			</div>
+
+			<div class="form-group">
+				<button type="button" class="btn btn-success col-sm-6" onclick="publish()">发布</button>
+				<button type="button" class="btn btn-deafult col-sm-6" onclick="cancel()">取消</button>
+			</div>
+		</form>
+	</div>
+
+
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script> -->
+	<script th:src="@{/assets/editormd/editormd.min.js}"></script>
+	<script type="text/javascript">
+       //初始化Markdown编辑器
+	    var contentEditor;
+	    $(function() {
+	      contentEditor = editormd("md-content", {
+			width   : "100%",//宽度
+			height  : 500,//高度
+			syncScrolling : "single",//单滚动条
+			path    : ".././assets/editormd/lib/",//依赖的包路径
+			saveHTMLToTextarea : true,//第二个输入框可获得html
+	      });
+	    });
+	</script>
+</body>
+</html>

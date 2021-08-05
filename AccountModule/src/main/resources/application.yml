@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatting_system?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 1234
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://127.0.0.1:7070/eureka
+
+
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+  type-aliases-package: edu.ncu.chattingsys.account.model.domain  #所有Entity别名类所在包

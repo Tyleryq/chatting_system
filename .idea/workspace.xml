@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="006a06e9-e50c-4a80-92f6-92dd26b1eeb6" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="AUTO_SHOW_ERRORS_IN_EDITOR" value="false" />
+    <option name="DISPLAY_NOTIFICATION_POPUP" value="false" />
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+    <option name="REBUILD_ON_DEPENDENCY_CHANGE" value="false" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="chatting_system" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\maven repository\repository" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="E:\maven repository\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-DarchetypeCatalog=local" />
+  </component>
+  <component name="ProjectId" id="1pU0Z3XvVIrKQ1tFQ6CWtiSqF7P" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/InterfaceModule/src/main/java/edu/ncu/chattingsys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/InterfaceModule/src/main/java/edu/ncu/chattingsys/inter/utils" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="edu.ncu.chattingsys.inter.interceptor" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.ncu.chattingsys.commonsapi.model.domain" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\java\edu\ncu\chattingsys\inter\utils" />
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\resources\templates" />
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\resources\static\assets\editormd\css" />
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\resources\static\assets" />
+      <recent name="E:\ideaProjects\chatting_system\SubscriptionModule\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.ncu.chattingsys.inter.config" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\resources\static\assets\css" />
+      <recent name="E:\ideaProjects\chatting_system\InterfaceModule\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ZoneMain">
+    <configuration name="MessageMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.ncu.chattingsys.message.MessageMain" />
+      <module name="MessageModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ncu.chattingsys.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.ncu.chattingsys.status.StatusMain" />
+      <module name="StatusModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ncu.chattingsys.status.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubscriptionMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.ncu.chattingsys.subscription.SubscriptionMain" />
+      <module name="SubscriptionModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ncu.chattingsys.subscription.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeamMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.ncu.chattingsys.team.TeamMain" />
+      <module name="TeamModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ncu.chattingsys.team.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZoneMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.ncu.chattingsys.zone.ZoneMain" />
+      <module name="ZoneModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ncu.chattingsys.zone.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.StatusMain" />
+      <item itemvalue="Application.MessageMain" />
+      <item itemvalue="Application.SubscriptionMain" />
+      <item itemvalue="Application.TeamMain" />
+      <item itemvalue="Application.ZoneMain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ZoneMain" />
+        <item itemvalue="Application.TeamMain" />
+        <item itemvalue="Application.SubscriptionMain" />
+        <item itemvalue="Application.MessageMain" />
+        <item itemvalue="Application.StatusMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="006a06e9-e50c-4a80-92f6-92dd26b1eeb6" name="Default Changelist" comment="" />
+      <created>1615222413873</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615222413873</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent">
+    <setting name="isActivated" value="false" />
+  </component>
+</project>

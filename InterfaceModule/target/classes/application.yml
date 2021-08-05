@@ -1,0 +1,24 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: client-interface
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负裁均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://127.0.0.1:7070/eureka
+
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况i正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000

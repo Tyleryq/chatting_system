@@ -1,0 +1,42 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: subscription-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatting_system?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 1234
+  cloud:
+    stream:
+      binders: #在此处配置要绑定的rabbitmq的服务信息;
+        defaultRabbit: #表示定义的名称，用于binding整合
+          type: rabbit #消息组件类型
+          environment: #设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings: #服务的整合处理
+        output: #这个名字是- - 个通道的名称
+          destination: messageExchange #表示要使用的Exchange名称定义
+          content-type: application/json #设置消息类型，本次为json, 文本则设置"“text/plain"
+          binder: defaultRabbit #设置要绑定的消息服务的具体设置
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负裁均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://127.0.0.1:7070/eureka
+
+
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+  type-aliases-package: edu.ncu.chattingsys.account.model.domain  #所有Entity别名类所在包

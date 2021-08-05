@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>公众号注册</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/register.css}">
+	<script th:src="@{/assets/js/subscriptionRegister.js}"></script>
+</head>
+<body>
+	<form class="form-horizontal col-xs-offset-2 col-sm-offset-4" role="form">
+		<div class="form-group"><h2 class="text-center col-sm-6 col-xs-10">公众号注册</h2></div>
+		<div class="form-group ">
+			<div class="col-sm-6 col-xs-10">
+				<label>公众号名称</label>
+				<input type="text" name="s_name" class="form-control" placeholder="请输入公众号名称">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>公司名称</label>
+				<input type="text" name="company" class="form-control" placeholder="请输入公司名称">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>工商执照注册码</label>
+				<input type="text" name="company_code" class="form-control" placeholder="请输入工商执照注册码">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>公众号简介</label>
+				<input type="text" name="description" class="form-control" placeholder="请输入公众号简介">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>密码</label>
+				<input type="password" name="pwd" class="form-control" placeholder="请输入密码">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<label>确认密码</label>
+				<input type="password" name="spwd" class="form-control" placeholder="请确认密码">
+			</div>
+		</div>	
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<input type="text" name="sureCode" placeholder="验证码"><img id="verifyCode" src="/verifyCode">
+			</div>
+		</div>	
+		<div class="form-group collapse" id="msgBox">
+			<div class="col-sm-6 col-xs-10 text-center">
+                <h2><span id="msg" class="label label-danger col-sm-12">错误信息</span></h2>
+            </div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<button type="button" class="btn btn-primary col-xs-12 col-sm-12" id="register">注册</button>
+			</div>
+		</div>		
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<a href="/login" class="col-sm-6 col-xs-6 text-left">登录</a>
+			</div>
+		</div>		
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>聊天系统登录</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" th:src="@{/assets/js/login.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/login.css}">
+</head>
+<body>
+    <form class="form-horizontal col-xs-offset-2 col-sm-offset-4" role="form">
+        <div class="form-group"><h2 class="col-xs-10 col-sm-5 text-center">聊天系统登录</h2></div>
+        <div class="form-group">
+            <div class="col-sm-5 col-xs-10">
+                <div class="input-group">
+                    <span class="glyphicon glyphicon-user input-group-addon"></span>
+                    <input type="text" class="form-control" name="uid" id="uid"
+                           placeholder="请输入号码" value="10000" />
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-xs-10 col-sm-5">
+                <div class="input-group">
+                    <span class="glyphicon glyphicon-lock input-group-addon"></span>
+                    <input type="password" class="form-control" name="pwd" id="pwd"
+                           placeholder="请输入密码" value="0000a">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+                <span class="control-label">账号类型：</span>
+                <label class="radio-inline">
+                    <input type="radio" name="account_type" value="person" checked>个人
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="account_type" value="public">公众号
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" checked> 7天内保存密码
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group collapse" id="msgBox">
+            <div class="col-sm-5 text-center">
+                <h2><span id="msg" class="label label-danger col-sm-12">用户名或密码错误</span></h2>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-5">
+                <button type="button" class="btn btn-primary col-xs-10 col-sm-12" id="login">登录</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-10 col-sm-5">
+                <a href="/registerPage" target="_blank" class="col-sm-6 col-xs-6 text-left">注册</a>
+                <a href="#" class="col-sm-6 col-xs-6 text-right">忘记密码</a>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>

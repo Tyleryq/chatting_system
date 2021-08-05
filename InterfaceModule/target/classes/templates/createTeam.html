@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>创建群聊</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/register.css}">
+</head>
+<body>
+	<div id="hidden" class="hidden"><!-- 此块不可见,用于保存数据 -->
+		<input type="number" name="" id="uid" th:value="${uid}"/>
+		<input type="text" name="" id="token" th:value="${token}"/>
+	</div>
+	<form class="form-horizontal col-xs-offset-2 col-sm-offset-4" role="form">
+		<div class="form-group"><h2 class="text-center col-sm-6 col-xs-10">创建群聊</h2></div>
+		<div class="form-group ">
+			<div class="col-sm-6 col-xs-10">
+				<label>群名称</label>
+				<input type="text" id="t_name" class="form-control" placeholder="请输入群名称">
+			</div>
+		</div>
+		<div class="form-group ">
+			<div class="col-sm-6 col-xs-10">
+				<label>群简介</label>
+				<input type="text" id="descript" class="form-control" placeholder="请输入群简介">
+			</div>
+		</div>
+		<div class="form-group collapse" id="msgBox">
+			<div class="col-sm-6 col-xs-10 text-center">
+                <h2><span id="msg" class="label label-danger col-sm-12">错误信息</span></h2>
+            </div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6 col-xs-10">
+				<button type="button" class="btn btn-primary col-xs-12 col-sm-12" onclick="sub()">创建</button>
+			</div>
+		</div>	
+	</form>
+</body>
+</html>
+<script type="text/javascript">
+	function sub(){
+		let uid=$("#uid").val();
+		let token=$("#token").val();
+		let t_name=$("#t_name").val();
+		let descript=$("#descript").val();
+
+		$.post('/createTeam', {uid: uid,token:token,t_name:t_name,descript:descript}, function(data){
+			console.log(data);
+			if(data.success==true){
+				alert(data.msg);
+			}else{
+				$("#msgBox").addClass("in");
+				$("#msg").val(data.msg);
+			}
+		});
+	}
+</script>
